@@ -8,7 +8,9 @@ include $path_info_db;
 ##관련 변수 저장된 php 파일
 include $path_variables;
 #echo "변수\n" . $path_variables;
-#echo "루트\n" . $home;?>
+#echo "루트\n" . $home;
+echo "is this branchc or master?";
+?>
 <html>
 <head>
 <link rel="stylesheet" href="<?=$ref_css?>" type="text/css" ></link>
