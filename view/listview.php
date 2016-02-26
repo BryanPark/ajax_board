@@ -9,6 +9,7 @@ include $path_info_db;
 include $path_variables;
 #echo "변수\n" . $path_variables;
 #echo "루트\n" . $home;
+echo "this is fileupload branch";
 ?>
 <html>
 <head>
