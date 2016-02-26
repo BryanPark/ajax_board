@@ -1,5 +1,4 @@
 <?
-
 session_start();
 ############### login session 정보 확인 ###########
 //데이터 베이스 연결하기
@@ -7,6 +6,8 @@ session_start();
 $controller = $_SERVER['DOCUMENT_ROOT'] . "/ajax_board/controller/";
 include $controller . "path_config.php";
 include $path_info_db;
+
+echo "this is a master branch";
 
 $seq = $_GET['seq'];
 $page_no = $_GET['page_no'];
