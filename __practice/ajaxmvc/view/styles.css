@@ -1,0 +1,10 @@
+body {
+    font-family: Georgia;
+}
+td {
+    border: 1px solid green;
+    padding: 2px;
+}
+.tr-on{
+    background: orange;
+}
