@@ -1,0 +1,290 @@
+#login_logout_div ul {
+  margin: -4px 13px 0px 0px;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  float: right;
+  background: #F0F0F0;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px;    
+
+}
+
+#login_logout_div li {
+  float: left;          
+}
+#login_logout_div fieldset { border:none;}
+
+#login_logout_div #login {
+  border-radius: 2px;
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.9);
+}
+#login_logout_div #logout {
+  display: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.9);
+}
+
+#login_logout_div #login-trigger,
+#login_logout_div #logout-trigger,
+#login_logout_div #signup a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  height: 27px;
+  line-height: 26px;
+  font-weight: bold;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #21265d;
+  text-shadow: 0 1px 0 #fff; 
+  font-size:12px;
+}
+
+#login_logout_div #signup a {
+  border-radius: 0 3px 3px 0;
+}
+
+#login_logout_div #login-trigger, #login_logout_div #logout-trigger {
+  border-radius: 3px 0 0 3px;
+}
+
+#login_logout_div #login-trigger:hover,
+#login_logout_div #logout-trigger:hover,
+#login_logout_div #login .active,
+#login_logout_div #logout .active,
+#login_logout_div #signup a:hover {
+  background: #fff;
+}
+
+#login_logout_div #login-content, #login_logout_div #logout-content {
+  display: none;
+  position: absolute;
+  top: 26px;
+  right: 0;
+  margin-right:-1px;
+  z-index: 999;    
+  background: #fff;
+  border-right: #C4C4C4 solid 1px;
+  background-image: linear-gradient(top, #fff, #eee);  
+  padding: 15px 5px 10px 15px;
+  box-shadow: 0px 2px 2px -1px rgba(0,0,0,.9);
+  border-radius: 3px 0 3px 3px;
+}
+
+#login_logout_div li #login-content, #login_logout_div li #logout-content {
+  right: 0;
+  width: 250px;  
+}
+
+/*--------------------*/
+
+#login_logout_div #login input {
+  background: #f1f1f1;
+  padding: 6px 5px;
+  margin: 0 0 5px 0;
+  width: 160px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px #ccc inset;
+  font-size:12px;
+}
+#login_logout_div #logout input[type="text"][readonly] {
+  background: #B2DDF1;
+  padding: 6px 5px;
+  margin: 0 0 5px 0;
+  width: 228px;
+  border: 1px solid #0187B9;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px #006084 inset;
+  font-size:12px;
+  font-weight:bold;
+  color:#191b44;
+}
+
+#login_logout_div #inputs input:focus {
+  background-color: #fff;
+  border-color: #e8c291;
+  outline: none;
+  box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+/*--------------------*/
+
+#login_logout_div #login #actions, #login_logout_div #logout #actions {
+  margin: 0px;
+}
+
+#login_logout_div #login #insubmit, #login_logout_div #logout #outsubmit {    
+  background-color: #0187B9;
+  background-image: linear-gradient(top, #0187B9, #0079A7);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+  border: 1px solid #006084;
+  float: right;
+  height: 28px;
+  padding: 0;
+  width: 80px;
+  margin-right:10px;
+  cursor: pointer;
+  font: bold 12px Arial, Helvetica;
+  color: #fff;
+}
+
+
+#login_logout_div #login #insubmit:hover,
+#login_logout_div #login #insubmit:focus,
+#login_logout_div #logout #outsubmit:hover,
+#login_logout_div #logout #outsubmit:focus {    
+  background-color: #0079A7;
+  background-image: linear-gradient(top, #0079A7, #0187B9);
+} 
+
+#login_logout_div #login #insubmit:active, #login_logout_div #logout #outsubmit:active {   
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
+}
+
+#login_logout_div #login #insubmit::-moz-focus-inner, #login_logout_div #logout #outsubmit::-moz-focus-inner {
+  border: none;
+}
+
+#login_logout_div #login #incancel, #login_logout_div #logout #outcancel {
+  background-color: #DDDDDD;
+  background-image: linear-gradient(top, #DDDDDD, #CCCCCC);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+  border: 1px solid #AAAAAA;
+  float: right;
+  height: 28px;
+  padding: 0;
+  width: 80px;
+  margin-right:10px;
+  cursor: pointer;
+  font: bold 12px Arial, Helvetica;
+  color: #404040;
+}
+
+#login_logout_div #login #incancel:hover,
+#login_logout_div #login #incancel:focus,
+#login_logout_div #logout #outcancel:hover,
+#login_logout_div #logout #outcancel:focus {    
+  background-color: #D4D4D4;
+  background-image: linear-gradient(top, #D4D4D4, #C4C4C4);
+} 
+#login_logout_div #login #incancel:active, #login_logout_div #logout #outcancel:active {   
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
+}
+
+#login_logout_div #login label, #login_logout_div #logout label {
+  float: left;
+  line-height: 30px;
+  width: 70px;
+}
+#login_logout_div #login-content #actions label {
+  float: left;
+  line-height: 30px;
+  width: 160px;
+  margin-left:70px;
+  margin-top:10px;
+}
+#login_logout_div #logout-content #actions label{
+  float: right;
+  line-height: 30px;
+  width: 100px;
+  margin-left:0px;
+  margin-right:5px;
+  margin-top:0px;
+}
+#login_logout_div #logout-content h3{
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+#login_logout_div #login label input, #login_logout_div #logout label input {
+  position: relative;
+  top: 2px;
+  right: 2px;
+}
+/******************************************************************************/
+#progressbox {
+border: 1px solid #0099CC;
+padding: 1px; 
+position:relative;
+width:400px;
+border-radius: 3px;
+margin: 10px;
+display:none;
+text-align:left;
+}
+#progressbar {
+height:20px;
+border-radius: 3px;
+background-color: #003333;
+width:1%;
+}
+#statustxt {
+top:3px;
+left:50%;
+position:absolute;
+display:inline-block;
+color: #000000;
+}
+
+/*******************************************************************************/
+.table{
+display:table;
+width:100%;
+}
+.row{
+display:table-row;
+}
+
+.cell{
+display:table-cell;
+text-align:center;
+margin:auto;
+}
+#top_bar .cell{
+
+text-align: center; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; padding: 8px 0; background: #faf9fa;
+background-color:grey;
+border:1px solid black;
+margin:30%;
+}
+#docs .cell{
+border:1px solid grey;
+margin:30%;
+}
+#docs.cell a:hover{
+color:green;
+}
+
+#doc_no{
+width:10%;
+border-right:white, 0px;
+}
+#doc_title{
+text-align:left;
+padding-left:2%;
+width:60%;
+}
+#index{
+padding:30px;
+}
+
+
+.hidden{
+display:hidden;
+}
+.inline-table;{
+display:inline-table;
+}
