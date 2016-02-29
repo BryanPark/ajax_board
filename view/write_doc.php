@@ -116,25 +116,28 @@ $(document).ready(function() {
 		showPreview:true,
 		previewHeight: "100px",
 		previewWidth: "100px",
-		showDelete : true,
-		/*downloadCallback:function(filename,pd)
+		showDelete: true,
+		showDownload:true,
+		downloadCallback:function(filename,pd)
 		{
 			location.href= "/jquery-file-upload/"+ "download.php?filename="+filename;
 		},
 		onLoad:function(obj)
 		{
+			console.log("onLoad start");
 			$.ajax({
 				cache: false,
 				url:"/jquery-upload-file/php/load.php",
-				datatype: "json",
+				dataType: "json",
 				success : function(data){
 					for(var i = 0 ; i <data.length; i++)
 					{
+						console.log("these are data : " + data[i]["name"]);
 						obj.createProgress(data[i]["name"], data[i]["path"], data[i]["size"]);
 					}
 				}
 			});
-		}*/
+		}
 	}); 
 	
 });
