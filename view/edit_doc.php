@@ -6,6 +6,7 @@ session_start();
 $controller = $_SERVER['DOCUMENT_ROOT'] . "/ajax_board/controller/";
 include $controller . "path_config.php";
 include $path_info_db;
+echo "this is fileupload branch";
 
 echo "this is a master branch";
 
