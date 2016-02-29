@@ -90,7 +90,7 @@ div { float:left; clear : both;}
      <textarea name="content" id="content" required cols=75 rows=30  maxlength=5000></textarea>
     </td>
   </tr>
-
+  
   <tr>
    <td></td>
    <td>
@@ -100,22 +100,43 @@ div { float:left; clear : both;}
 
   </tr>
 </table>
+   <div id="preview1upload">Upload</div>
 </div>
-<div id="previewupload">Upload</div>
+
 <script>
 $(document).ready(function() {
 	$("#fileuploader").uploadFile({
 		url:"/jquery-upload-file/php/upload.php",
 		fileName:"myfile"
 	});
-	$("#previewupload").uploadFile({
+	var uploadObj = $("#preview1upload").uploadFile({
 		url:"/jquery-upload-file/php/upload.php",
 		fileName:"myfile",
 		acceptFiles:"image/*",
 		showPreview:true,
 		previewHeight: "100px",
 		previewWidth: "100px",
+		showDelete : true,
+		/*downloadCallback:function(filename,pd)
+		{
+			location.href= "/jquery-file-upload/"+ "download.php?filename="+filename;
+		},
+		onLoad:function(obj)
+		{
+			$.ajax({
+				cache: false,
+				url:"/jquery-upload-file/php/load.php",
+				datatype: "json",
+				success : function(data){
+					for(var i = 0 ; i <data.length; i++)
+					{
+						obj.createProgress(data[i]["name"], data[i]["path"], data[i]["size"]);
+					}
+				}
+			});
+		}*/
 	}); 
+	
 });
 </script>
 
