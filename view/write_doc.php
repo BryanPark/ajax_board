@@ -67,7 +67,7 @@ div { float:left; clear : both;}
 <body>
 <!-- 이미지 업로드 -->
 
-
+<img src="">
 <!--
 <form action="/ajax_board/model/process_img.php" method="post" enctype="multipart/form-data" id="upload_form">
 <input name="image_file" type="file" required="true" />
