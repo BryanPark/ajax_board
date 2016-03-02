@@ -21,9 +21,9 @@ else
 <html>
 <head>
 <title>practice of board</title>
-<link href="/jquery-upload-file/css/uploadfile.css" rel="stylesheet">
+<link href= "<?=$ref_jqupload?>css/uploadfile.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="/jquery-upload-file/js/jquery.uploadfile.js"></script>
+<script src="<?=$ref_jqupload?>js/jquery.uploadfile.js"></script>
 <style type="text/css">
 div { float:left; clear : both;}
 </style>
@@ -106,11 +106,11 @@ div { float:left; clear : both;}
 <script>
 $(document).ready(function() {
 	$("#fileuploader").uploadFile({
-		url:"/jquery-upload-file/php/upload.php",
+		url:"<?=$ref_jqupload?>php/upload.php",
 		fileName:"myfile"
 	});
 	var uploadObj = $("#preview1upload").uploadFile({
-		url:"/jquery-upload-file/php/upload.php",
+		url:"<?=$ref_jqupload?>php/upload.php",
 		fileName:"myfile",
 		acceptFiles:"image/*",
 		showPreview:true,
@@ -120,14 +120,14 @@ $(document).ready(function() {
 		showDownload:true,
 		downloadCallback:function(filename,pd)
 		{
-			location.href= "/jquery-file-upload/"+ "download.php?filename="+filename;
+			location.href= "<?=$ref_jqupload?>"+ "download.php?filename="+filename;
 		},
 		onLoad:function(obj)
 		{
 			console.log("onLoad start");
 			$.ajax({
 				cache: false,
-				url:"/jquery-upload-file/php/load.php",
+				url:"<?=$ref_jqupload?>php/load.php",
 				dataType: "json",
 				success : function(data){
 					for(var i = 0 ; i <data.length; i++)
@@ -137,6 +137,20 @@ $(document).ready(function() {
 					}
 				}
 			});
+		},
+		deleteCallback: function(data,pd)
+		{
+			for(var i=0;i<data.length;i++)
+			{
+				$.post("<?=$ref_jqupload?>php/delete.php",{op:"delete",name:data[i]},
+				function(resp, textStatus, jqXHR)
+				{
+					//Show Message    
+					alert("File Deleted");        
+				});
+			 }        
+			pd.statusbar.hide(); //You choice to hide/not.
+
 		}
 	}); 
 	

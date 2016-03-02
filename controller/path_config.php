@@ -12,6 +12,8 @@ $m = "model/";
 $v = "view/";
 $c = "controller/";
 
+$ref_jqupload = $ref_root."jquery-upload-file/";
+$path_jqupload = $path_root."jquery-upload-file/";
 
 $ref_model = $ref_root .$m;
 $ref_view = $ref_root . $v;
