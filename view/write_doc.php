@@ -34,6 +34,7 @@ div { float:left; clear : both;}
 </style>
 </head>
 <script>
+var postabledata; 
 	function confirm_submit(){
 		var is_ok_title=document.forms["write"]["title"].value;
 		var is_ok_content=document.forms["write"]["content"].value;
@@ -68,8 +69,27 @@ div { float:left; clear : both;}
 			history.back();
 		}
 	};
+	$(document).keydown(function(e){   
+        if(e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA"){       
+            if(e.keyCode === 8){ 
+				console.log("key pressed");
+				///////////////////
+				$.post( 
+                  "<?=$ref_back_delete?>",
+				{path1:postabledata} ,
+				  function(data) {
+					 //$('#stage').html(data);
+				  }
+                );
+				///////////////////////////
+				return false;
+            }
+        }
+    });
 	
-	
+			
+            
+         
 </script>
 
 
@@ -111,7 +131,7 @@ div { float:left; clear : both;}
 </div>
 
 <script>
-var postabledata; 
+
 $(document).ready(function() {
 	$("#fileuploader").uploadFile({
 		url:"<?=$ref_jqupload?>php/upload.php",

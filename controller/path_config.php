@@ -37,6 +37,7 @@ $path_search = $path_view . "search.php";
 $path_login_view=$path_view . "login_view.php";
 $path_update =$path_controller . "update.php";
 
+
 $path_delete =$path_controller . "delete.php";
 $path_predel =$path_controller . "predel.php";
 $path_logincheck_js = $path_controller . "logincheck.js";
@@ -44,6 +45,7 @@ $path_logincheck_js = $path_controller . "logincheck.js";
 $path_insert =$path_model . "insert_db.php";
 $path_login_ok =$path_model ."login_ok.php";
 $path_logout =$path_model . "logout.php";
+$path_back_delete =$path_model . "back_delete.php";
 ################# 상대경로 목록 ################
 
 $ref_info_db = $ref_controller . "db_conn.php";
@@ -68,6 +70,7 @@ $ref_predel =$ref_model . "predel.php";
 $ref_login_ok =$ref_model ."login_ok.php";
 $ref_logout =$ref_model . "logout.php";
 $ref_insert =$ref_model . "insert_db.php";
+$ref_back_delete =$ref_model . "back_delete.php";
 
 $ref_getlist_js = $ref_controller . "getlist.js";
 $ref_getlist_php = $ref_model . "getlist.php";

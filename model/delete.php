@@ -22,13 +22,13 @@ if (file_exists($filePath))
 {
 	unlink($filePath);
 	$fi = new FilesystemIterator($dir, FilesystemIterator::SKIP_DOTS);
-	ChromePhp::log("rmdir -> :" . $dir);
-	ChromePhp::log("There were :". iterator_count($fi) ."files");
+	//ChromePhp::log("rmdir -> :" . $dir);
+	//ChromePhp::log("There were :". iterator_count($fi) ."files");
 	if(iterator_count($fi)==0 || iterator_count($fi)==null){
 		ChromePhp::log("rmdir");
 		rmdir($dir);
 	}
-	ChromePhp::log("filePath unlinked");
+	//ChromePhp::log("filePath unlinked");
 }
 echo "Deleted File ".$fileName."<br>";
 //추가적으로 필요한것 -> 이게 해당 폴더의 마지막 파일이면 해당 폴더까지 삭제하게끔 rmdir에 정규식사용
