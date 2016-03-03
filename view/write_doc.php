@@ -15,6 +15,11 @@ if (!empty($_SESSION['login_ok']))#------로그인 되었는지를 비교-------
 }
 else
 {
+	echo ("<script>alert('글을 작성하려면 먼저 로그인하세요');
+		window.location.href='$ref_list';
+	</script>");
+	
+//echo ("<script>window.location.href='login_page.php';</script>");
 }
 #######################login####################
 ?>
@@ -37,6 +42,8 @@ div { float:left; clear : both;}
 		//alert("내용:"+is_ok_content);
 		if(is_ok_title && is_ok_content){
 			if(confirm("등록하시겠습니까?")){
+				//$("input[id=postabledata]").val(postabledata);
+				//alert("alert: "+$("#postabledata").val());
 				return true;
 			}
 			else
@@ -61,13 +68,14 @@ div { float:left; clear : both;}
 			history.back();
 		}
 	};
+	
+	
 </script>
 
 
 <body>
 <!-- 이미지 업로드 -->
 
-<img src="">
 <!--
 <form action="/ajax_board/model/process_img.php" method="post" enctype="multipart/form-data" id="upload_form">
 <input name="image_file" type="file" required="true" />
@@ -88,22 +96,22 @@ div { float:left; clear : both;}
     <td width=50 align=left >본문</td>
     <td align=left height=500 >
      <textarea name="content" id="content" required cols=75 rows=30  maxlength=5000></textarea>
+	 <input type="hidden" id="postabledata" name="postabledata" value="">
     </td>
   </tr>
-  
   <tr>
    <td></td>
    <td>
-	<input type=submit value="save(저장하기)" onclick="return confirm_submit()">
+	<input id="doc_submit" type=submit value="save(저장하기)" onclick="return confirm_submit()">
 	<input type=button value="back(뒤로가기)" onclick="return confirm_return()">
    </td>
-
   </tr>
 </table>
    <div id="preview1upload">Upload</div>
 </div>
 
 <script>
+var postabledata; 
 $(document).ready(function() {
 	$("#fileuploader").uploadFile({
 		url:"<?=$ref_jqupload?>php/upload.php",
@@ -116,13 +124,17 @@ $(document).ready(function() {
 		showPreview:true,
 		previewHeight: "100px",
 		previewWidth: "100px",
-		showDelete: true,
-		showDownload:true,
+		multiple:false,
+		dragDrop:false,
+		maxFileCount:1,
+		formData : {
+			
+		},
 		downloadCallback:function(filename,pd)
 		{
 			location.href= "<?=$ref_jqupload?>"+ "download.php?filename="+filename;
 		},
-		onLoad:function(obj)
+		/*onLoad:function(obj)
 		{
 			console.log("onLoad start");
 			$.ajax({
@@ -132,28 +144,27 @@ $(document).ready(function() {
 				success : function(data){
 					for(var i = 0 ; i <data.length; i++)
 					{
-						console.log("these are data : " + data[i]["name"]);
+						//console.log("these are data : " + data[i]["name"] +"  path:" + data[i]["path"]);
 						obj.createProgress(data[i]["name"], data[i]["path"], data[i]["size"]);
 					}
 				}
 			});
-		},
-		deleteCallback: function(data,pd)
+		},*/
+		onSuccess:function(files,data,xhr,pd)
 		{
-			for(var i=0;i<data.length;i++)
-			{
-				$.post("<?=$ref_jqupload?>php/delete.php",{op:"delete",name:data[i]},
-				function(resp, textStatus, jqXHR)
-				{
-					//Show Message    
-					alert("File Deleted");        
-				});
-			 }        
-			pd.statusbar.hide(); //You choice to hide/not.
-
+			//files: list of files
+			//data: response from server
+			//xhr : jquer xhr object
+			console.log("success");
+			postabledata = JSON.parse(data);
+			$("input[id=postabledata]").val(postabledata);
+			console.log("postabledata : " + $("#postabledata").val() + ", type : "+ typeof $("#postabledata").val());
 		}
-	}); 
-	
+		
+	});
+	/*$("#doc_submit").click(function(){
+		uploadObj.startUpload();
+	});*/
 });
 </script>
 

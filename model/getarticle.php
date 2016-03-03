@@ -27,6 +27,10 @@ mysqli_close($conn);
 <head>
 <title>테스트</title>
 <style>
+img:{
+width : 50%;
+height : 50%;
+}
 </style>
 
 
@@ -73,7 +77,7 @@ bgcolor=#777777>
 			bgcolor=white><?=$row[date]?>
 		</td>
 		<td width=50 height=20 align=center bgcolor=#EEEEEE>조회수</td>
-		<td width=240 bgcolor=white><?=$row[view]?></td>
+		<td width=240 bgcolor=white><?=$row['view']?></td>
 	</tr>
 	<!--/글정보-->
 
@@ -81,11 +85,26 @@ bgcolor=#777777>
 	<tr height=100px>
 		<td bgcolor=white colspan=6>
 			<font color=black>
-				<pre><?=htmlspecialchars($row[content])?></pre>
+				<pre><?=htmlspecialchars($row['content'])?></pre>
 			</font>
 		</td>
 	</tr>
 	<!--/본문-->
+	
+	<!--첨부사진-->
+	<?
+	if($row['file']!= null&&$row['file']!= ""){
+		echo "<tr height=100px>
+			<td bgcolor=white colspan=6>
+				<font color=black>
+					<pre>첨부 이미지</pre>
+					<img width='60%' src='".htmlspecialchars(str_replace($_SERVER['DOCUMENT_ROOT'],'',$row['file'])). "'>
+				</font>
+			</td>
+		</tr>";
+	}
+	?>
+	<!--첨부사진-->
 
 	<!-- 기타 버튼 + 이전 다음 -->
 	<tr>
