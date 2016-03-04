@@ -75,6 +75,7 @@ $(document).ready(function(){
 		}
 		else
 		{
+			echo "<a href=$ref_join_view>[회원가입]</a>";
 		//echo ("로그인하세요! <a href=$ref_login_view>[로그인]</a>");
 		//echo ("<script>window.location.href='login_page.php';</script>");
 		}

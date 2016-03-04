@@ -74,18 +74,39 @@ var postabledata;
             if(e.keyCode === 8){ 
 				console.log("key pressed");
 				///////////////////
-				$.post( 
-                  "<?=$ref_back_delete?>",
-				{path1:postabledata} ,
-				  function(data) {
-					 //$('#stage').html(data);
-				  }
-                );
+				$.ajax({
+					url:'<?=$ref_back_delete?>',
+					type:'post',
+					data:{data1:$("#postabledata").val()},
+					success:function(data,textStatus,jqXHR)
+					{
+						console.log("success and result:"+$("#postabledata").val());
+						return true;//success-> go back.
+					},
+					error:function (jqXHR, textStatus, errorThrown)
+					{
+					}
+				});
 				///////////////////////////
-				return false;
+				//return true;
             }
         }
     });
+	$(window).on('beforeunload',function(){
+		$.ajax({
+			url:'<?=$ref_back_delete?>',
+			type:'post',
+			data:{data1:$("#postabledata").val()},
+			success:function(data,textStatus,jqXHR)
+			{
+				console.log("success and result:"+$("#postabledata").val());
+				return true;//success-> go back.
+			},
+			error:function (jqXHR, textStatus, errorThrown)
+			{
+			}
+		});
+	});
 	
 			
             

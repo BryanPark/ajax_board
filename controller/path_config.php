@@ -35,13 +35,13 @@ $path_edit = $path_view . "edit_doc.php";
 $path_write =$path_view .  "write_doc.php";
 $path_search = $path_view . "search.php";
 $path_login_view=$path_view . "login_view.php";
-$path_update =$path_controller . "update.php";
 
-
-$path_delete =$path_controller . "delete.php";
-$path_predel =$path_controller . "predel.php";
 $path_logincheck_js = $path_controller . "logincheck.js";
+$path_form_validation_js = $path_controller . "form_validation.js";
 
+$path_update =$path_model . "update.php";
+$path_delete =$path_model . "delete.php";
+$path_predel =$path_model . "predel.php";
 $path_insert =$path_model . "insert_db.php";
 $path_login_ok =$path_model ."login_ok.php";
 $path_logout =$path_model . "logout.php";
@@ -62,6 +62,7 @@ $ref_login_view=$ref_view . "login_view.php";
 
 
 $ref_logincheck_js = $ref_controller . "logincheck.js";
+$ref_form_validation_js = $ref_controller . "form_validation.js";
 
 
 $ref_update =$ref_model . "update.php";
@@ -71,6 +72,8 @@ $ref_login_ok =$ref_model ."login_ok.php";
 $ref_logout =$ref_model . "logout.php";
 $ref_insert =$ref_model . "insert_db.php";
 $ref_back_delete =$ref_model . "back_delete.php";
+$ref_join_insert =$ref_model . "join_insert_db.php";
+$ref_join_view = $ref_view . "join_view.php";
 
 $ref_getlist_js = $ref_controller . "getlist.js";
 $ref_getlist_php = $ref_model . "getlist.php";
